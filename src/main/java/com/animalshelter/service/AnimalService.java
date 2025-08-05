@@ -1,7 +1,7 @@
 package com.animalshelter.service;
 
 import com.animalshelter.DTO.AnimalDTO;
-import com.animalshelter.model.Animal;
+import com.animalshelter.entity.Animal;
 import com.animalshelter.repository.AnimalRepository;
 import org.springframework.stereotype.Service;
 
@@ -18,17 +18,18 @@ public class AnimalService {
         this.repository = repository;
     }
 
-    public List<Animal> findAll() {
-       List<AnimalDTO> result = new ArrayList<>();
-        List<Animal> animals=repository.findAll();
-        for(int i=0;i<animals.size();i++) {
+    public List<AnimalDTO> findAll() {
+        List<AnimalDTO> result = new ArrayList<>();
+        List<Animal> animals = repository.findAll();
+
+        for (Animal animal : animals) {
             result.add(AnimalDTO.builder()
-                    .age(animals.get(i).getAge())
+                    .age(animal.getAge())
                     .build());
         }
+
         return result;
     }
-
 
     public Optional<Animal> findById(Long id) {
         return repository.findById(id);

@@ -1,4 +1,4 @@
-package com.animalshelter.model;
+package com.animalshelter.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
