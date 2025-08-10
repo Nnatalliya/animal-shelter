@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@Builder
 @RequestMapping("/api/animals")
 @CrossOrigin(origins = "*")
 public class AnimalController {
@@ -22,7 +21,7 @@ public class AnimalController {
         this.service = service;
     }
 
-    @GetMapping
+    @GetMapping("/getall")
     public List<AnimalDTO> getAll() {
         return service.findAll(); // <- Тук връщаме DTO
     }
