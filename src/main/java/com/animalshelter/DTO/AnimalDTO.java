@@ -1,11 +1,13 @@
 package com.animalshelter.DTO;
 
 import lombok.Builder;
+import lombok.Getter;
+import lombok.Setter;
 
-import java.io.Serializable;
-
+@Setter
+@Getter
 @Builder
-public class AnimalDTO implements Serializable {
+public class AnimalDTO {
     private String name;
     private String species;
     private Integer age;

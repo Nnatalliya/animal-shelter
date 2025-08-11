@@ -27,7 +27,7 @@ public class AnimalController {
     }
 
 
-    @GetMapping("/{id}")
+    @GetMapping("/api/animals/{id}")
     public ResponseEntity<Animal> getById(@PathVariable Long id) {
         return service.findById(id)
                 .map(ResponseEntity::ok)
